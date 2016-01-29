@@ -1,7 +1,7 @@
 package board.figure;
 import java.util.*;
 import java.io.*;
-import board.*;
+import board.Board;
 
 public class Figure
 {
@@ -18,11 +18,11 @@ public class Figure
 		this.code = code;
 	}
 	
-	public getX() { return x; }
-	public getY() { return y; }
-	public getIsWhite() { return isWhite; }
+	public int getX() { return x; }
+	public int getY() { return y; }
+	public boolean getIsWhite() { return isWhite; }
 	
-	public getCode() {
+	public char getCode() {
 		if(isWhite) {
 			return Character.toUpperCase(code);
 		} else {
@@ -30,11 +30,11 @@ public class Figure
 		}
 	}
 	
-	public setBoard(board) {
+	public void setBoard(Board board) {
 		this.board = board;
 	}
 	
-	public void moveTo(x,y) {
+	public void moveTo(int x, int y) {
 		if(board.isValidPosition(x,y)) {
 			if (x == this.x+1 || x == this.x-1) {
 				if(y == this.y+1 || y == this.y-1) {
