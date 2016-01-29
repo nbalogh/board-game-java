@@ -24,10 +24,10 @@ public class Board
 	}
 	
 	public void print() {
-		for(int i=0; i<x+1; i++) {
-			for(int j=0; i<y+1; j++) {
+		for(int i=0; i<this.x+1; i++) {
+			for(int j=0; j<this.y+1; j++) {
 				for(Figure f : figures) {
-					if(x==f.getX() && y==f.getY()) {
+					if(i==f.getX() && j==f.getY()) {
 						System.out.print(f.getCode());
 					} else {
 						System.out.print(".");
